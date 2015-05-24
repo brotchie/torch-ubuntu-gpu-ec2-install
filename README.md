@@ -73,3 +73,26 @@ sudo luarocks install itorch
 # Fix up some permissions because we installed torch as root.
 sudo chown -R ubuntu:ubuntu ~/.ipython
 ```
+
+## Testing GPU Processing with a Recurrent Neural Network
+
+Testing with a real-world example. Here we use Andrej Karpathy's code from [The Unreasonable Effectiveness of Recurrent Neural Networks](http://karpathy.github.io/2015/05/21/rnn-effectiveness/) available at https://github.com/karpathy/char-rnn.
+
+```bash
+$ sudo luarocks install nngraph 
+$ sudo luarocks install optim
+
+$ git clone https://github.com/karpathy/char-rnn
+$ cd char-rnn
+
+# Train the RNN with the shakespeare dataset.
+$ th train.lua
+
+```
+
+You should see Torch execute 6330 batches of training. On a `g2.2xlarge` instance it should take around 130ms per batch. After the model has trained, you can sample text from the RNN using:
+
+```bash
+$ th sample.lua cv/some_checkpoint.t7
+```
+
