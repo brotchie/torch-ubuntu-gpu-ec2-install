@@ -12,23 +12,25 @@ Preliminary steps:
 Note that the latest version of the CUDA .deb package is available at https://developer.nvidia.com/cuda-downloads.
 
 ```bash
-# Pull the latest NVIDIA CUDA package and install it. Note that this step simply installs a local repository. It
-# doesn't actually install the cuda toolkits / drivers.
+# Pull the latest NVIDIA CUDA package and install it. Note that this step
+# simply installs a local repository. It doesn't actually install the cuda
+# toolkits / drivers.
 wget http://developer.download.nvidia.com/compute/cuda/7_0/Prod/local_installers/rpmdeb/cuda-repo-ubuntu1404-7-0-local_7.0-28_amd64.deb
 sudo dpkg -i cuda-repo-ubuntu1404-7-0-local_7.0-28_amd64.deb
 
-# Update apt repositories and install the linux-image-extra-virtual package. This package
-# include the drm.ko kernel module that's required by the NVIDIA drivers.
-# When prompted during install, choose "install the package maintainer's version" to ensure the
-# latest version of the Linux kernel is booted.
+# Update apt repositories and install the linux-image-extra-virtual package.
+# This package include the drm.ko kernel module that's required by the NVIDIA drivers.
+# When prompted during install, choose "install the package maintainer's version"
+# to ensure the latest version of the Linux kernel is booted.
 sudo apt-get update
 sudo apt-get install -y linux-image-extra-virtual
 
-# Install the version of the headers that matches the freshly installed kernel from the previous step.
+# Install the version of the headers that matches the freshly installed kernel
+# from the previous step.
 sudo apt-get install -y linux-source linux-headers-3.13.0-53-generic
 
-# Now we can install the cuda toolkits and drivers. The installation process will automatically
-# compile the driver kernel modules.
+# Now we can install the cuda toolkits and drivers. The installation process
+# will automatically compile the driver kernel modules.
 sudo apt-get install -y cuda
 
 # We now have to reboot to load the new kernel and kernel drivers.
