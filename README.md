@@ -1,6 +1,8 @@
 # Installing Torch on Ubuntu 14.04 Amazon EC2 GPU Instances
 This is a guide for installing the Torch machine learning ecosystem onto a GPU EC2 instance running Ubuntu 14.04.
 
+**Note:** I have created and made available a Community EC2 AMI following these step with the name `torch-ubuntu-14.04-cuda-7.0-28` and ami-id `ami-c79b7eac`. Simply search for `ami-c79b7eac` in Community AMIs when creating an instance to get up and running quickly.
+
 Preliminary steps:
 
  - Start a `g2.2xlarge` or `g2.8xlarge` instance with the *Ubuntu Server 14.04 LTS (HVM), SSD Volume Type - ami-d05e75b8* base AMI;
