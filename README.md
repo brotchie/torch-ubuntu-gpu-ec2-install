@@ -43,6 +43,7 @@ cat >> ~/.bashrc <<END
 export PATH=/usr/local/cuda-7.0/bin/:\$PATH
 export LD_LIBRARY_PATH=/usr/local/cuda-7.0/lib64/:\$LD_LIBRARY_PATH
 END
+source ~/.bashrc
 
 # Install and compiled the deviceQuery sample from the cuda distribution
 # to validate the NVIDIA driver installation was successful.
